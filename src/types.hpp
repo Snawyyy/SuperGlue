@@ -25,7 +25,8 @@ enum class OverlayType {
   MUTE,
   VOLUME_UP,
   VOLUME_DOWN,
-  VOLUME_LEVEL
+  VOLUME_LEVEL,
+  SCROLL_ANCHOR
 };
 
 /**
@@ -47,6 +48,9 @@ struct OverlayEvent {
   OverlayType type;
   std::chrono::steady_clock::time_point startTime;
   int volumeLevel = 0;  // 0-100 percentage
+  // For scroll anchor (global coordinates)
+  double x = 0;
+  double y = 0;
 };
 
 /**
@@ -57,6 +61,10 @@ struct OverlayInfo {
   float opacity = 0.0f;
   std::string iconPath;
   int volumeLevel = 0;  // 0-100 percentage
+  // Position override (if set, ignores standard layout)
+  bool hasCustomPos = false;
+  double x = 0;
+  double y = 0;
 };
 
 /**

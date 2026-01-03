@@ -35,6 +35,8 @@ inline std::string getDefaultIconPath(OverlayType type) {
       return home + "/.icons/down.png";
     case OverlayType::MUTE:
       return home + "/.icons/mute.png";
+    case OverlayType::SCROLL_ANCHOR:
+      return home + "/.icons/anchor.png";
     default:
       return "";
   }

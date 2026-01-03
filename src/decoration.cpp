@@ -4,6 +4,7 @@
 #include "pass-element.hpp"
 #include <hyprland/src/Compositor.hpp>
 #include <hyprland/src/render/Renderer.hpp>
+#include <hyprland/src/managers/input/InputManager.hpp>
 
 Superglue::Superglue(PHLWINDOW pWindow)
     : IHyprWindowDecoration(pWindow) {
@@ -104,17 +105,103 @@ void Superglue::renderPass(PHLMONITOR pMonitor, float a) {
   if (states.empty()) return;
 
   CBox windowBox = assignedBoxGlobal();
+  bool hasAnchor = false;
 
   // Render volume overlays first (bottom layer)
   for (const auto& info : states) {
-    if (info.type == OverlayType::MUTE) continue;
+    if (info.type == OverlayType::MUTE || info.type == OverlayType::SCROLL_ANCHOR) continue;
     renderOverlay(info, windowBox, a);
   }
 
-  // Render mute overlay last (top layer)
+  // Render mute overlay (top layer)
   for (const auto& info : states) {
-    if (info.type != OverlayType::MUTE) continue;
-    renderOverlay(info, windowBox, a);
+    if (info.type == OverlayType::MUTE) {
+      renderOverlay(info, windowBox, a);
+    }
+  }
+
+  // Render Scroll Anchor + Line
+  for (const auto& info : states) {
+    if (info.type == OverlayType::SCROLL_ANCHOR) {
+      renderAnchorLine(info, windowBox, a);
+      hasAnchor = true;
+    }
+  }
+
+  // Continuous update if anchor is active
+  if (hasAnchor) {
+    damageEntire();
+  }
+}
+
+void Superglue::renderAnchorLine(const OverlayInfo& info, const CBox& windowBox, float alpha) {
+  // 1. Calculate geometry
+  Vector2D anchorPos = {info.x, info.y}; // Anchor center
+  Vector2D mousePos = g_pInputManager->getMouseCoordsInternal();
+
+  Vector2D diff = mousePos - anchorPos;
+  float len = std::sqrt(diff.x * diff.x + diff.y * diff.y);
+  
+  // Normalized direction
+  Vector2D dir = {0, 0};
+  if (len > 0.1f) {
+    dir = diff / len;
+  }
+
+  // 2. Determine Anchor Icon based on direction
+  std::string iconName = "anchor.png";
+  if (len > 10.0f) {
+      if (diff.y > 0) iconName = "anchor_down.png";
+      else iconName = "anchor_up.png";
+  }
+  std::string iconPath = std::string(getenv("HOME")) + "/.icons/" + iconName;
+
+  // 3. Render Dotted Line (Red) - UNDER Anchor
+  // Draw dots every 15 pixels
+  float step = 15.0f;
+  
+  // Dynamic Thickness: Standard 4.0, reduces slowly.
+  // Formula: 4.0 - (len / 300.0). reaching min size at ~600px.
+  float dotSize = 4.0f - (len / 300.0f);
+  if (dotSize < 2.0f) dotSize = 2.0f; // Minimum thickness (more firm)
+
+  CHyprColor dotColor;
+  dotColor.r = 1.0f;
+  dotColor.g = 0.0f;
+  dotColor.b = 0.0f;
+  dotColor.a = alpha * 0.8f;
+
+  for (float d = step; d < len; d += step) {
+    Vector2D dotPos = anchorPos + (dir * d);
+    
+    // Center dot
+    CBox dotBox = {
+        dotPos.x - dotSize/2.0,
+        dotPos.y - dotSize/2.0,
+        (double)dotSize,
+        (double)dotSize
+    };
+
+    CHyprOpenGLImpl::SRectRenderData rectData;
+    rectData.round = 1;
+    
+    g_pHyprOpenGL->renderRect(dotBox, dotColor, rectData);
+  }
+
+  // 4. Render Anchor Icon - ON TOP
+  auto& cache = TextureCache::get();
+  auto tex = cache.load(iconPath);
+  if (tex) {
+      Vector2D iconSize = cache.getSize(iconPath);
+      CBox iconBox = {
+          anchorPos.x - (iconSize.x / 2.0f),
+          anchorPos.y - (iconSize.y / 2.0f),
+          iconSize.x,
+          iconSize.y
+      };
+      CHyprOpenGLImpl::STextureRenderData texData;
+      texData.a = alpha;
+      g_pHyprOpenGL->renderTexture(tex, iconBox, texData);
   }
 }
 
@@ -129,12 +216,23 @@ void Superglue::renderOverlay(
   if (!tex) return;
 
   Vector2D iconSize = cache.getSize(info.iconPath);
-  Vector2D pos = calculateIconPosition(
-      windowBox, iconSize, Position::CENTER);
+  Vector2D pos;
+
+  if (info.hasCustomPos) {
+    // Custom position (Global coordinates, e.g. Scroll Anchor)
+    // Center icon on the coordinate
+    pos.x = info.x - (iconSize.x / 2.0f);
+    pos.y = info.y - (iconSize.y / 2.0f);
+  } else {
+    // Standard position logic
+    // Retrieves default config for type (could be optimized)
+    auto cfg = config::getDefaultConfig(info.type);
+    pos = calculateIconPosition(windowBox, iconSize, cfg.position);
+  }
 
   CBox iconBox = {
-      std::round(pos.x),
-      std::round(pos.y),
+      pos.x,
+      pos.y,
       iconSize.x,
       iconSize.y
   };

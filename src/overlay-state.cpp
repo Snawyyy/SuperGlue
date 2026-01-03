@@ -130,43 +130,32 @@ void OverlayState::onOverlayCommand(const std::string& content) {
     if (line.empty()) continue;
 
     std::istringstream lineStream(line);
-    std::string cmd, addr;
-    int volume = 0;
-    lineStream >> cmd >> addr >> volume;
+    std::string cmd;
+    lineStream >> cmd;
 
-    if (addr.empty()) continue;
-
-    log("Received cmd: " + cmd + " for " + addr +
-        " vol: " + std::to_string(volume));
-
-    std::lock_guard<std::mutex> lock(m_mutex);
-
-    // Clear previous events for this address to avoid stacking
-    m_volumeEvents[addr].clear();
-
-    auto now = std::chrono::steady_clock::now();
-
-    // Create volume level event (shows in center)
-    OverlayEvent levelEvent;
-    levelEvent.type = OverlayType::VOLUME_LEVEL;
-    levelEvent.startTime = now;
-    levelEvent.volumeLevel = volume;
-    m_volumeEvents[addr].push_back(levelEvent);
-
-    // Create direction arrow event
-    OverlayEvent arrowEvent;
-    arrowEvent.startTime = now;
-    arrowEvent.volumeLevel = volume;
-    if (cmd == "vol-up") {
-      arrowEvent.type = OverlayType::VOLUME_UP;
-    } else if (cmd == "vol-down") {
-      arrowEvent.type = OverlayType::VOLUME_DOWN;
+    if (cmd == "scroll-start" || cmd == "scroll-stop") {
+      // Put cmd back into stream or pass it? 
+      // Actually simpler to pass cmd string and let handler parse rest
+      // My helper declaration takes lineStream. 
+      // Need to handle "scroll-stop" logic. 
+      
+      // Re-parsing approach inside loop:
+      if (cmd == "scroll-start") {
+          handleScrollCommand(lineStream, damageNeeded);
+      } else if (cmd == "scroll-stop") {
+          std::string addr;
+          if (lineStream >> addr) {
+             log("Scroll Stop: " + addr);
+             std::lock_guard<std::mutex> lock(m_mutex);
+             m_scrollAnchors.erase(addr);
+             damageNeeded = true;
+          }
+      } else {
+          handleVolumeCommand(lineStream, cmd, damageNeeded);
+      }
     } else {
-      continue;
+        handleVolumeCommand(lineStream, cmd, damageNeeded);
     }
-    m_volumeEvents[addr].push_back(arrowEvent);
-
-    damageNeeded = true;
   }
 
   // Clear the command file
@@ -175,7 +164,66 @@ void OverlayState::onOverlayCommand(const std::string& content) {
   if (damageNeeded) dispatchDamage();
 }
 
+void OverlayState::handleScrollCommand(std::istringstream& lineStream, bool& damageNeeded) {
+  std::string addr;
+  double x, y;
+  if (lineStream >> addr >> x >> y) {
+    log("Scroll Start: " + addr + " at " + std::to_string(x) + "," + std::to_string(y));
+    std::lock_guard<std::mutex> lock(m_mutex);
+    OverlayEvent event;
+    event.type = OverlayType::SCROLL_ANCHOR;
+    event.x = x;
+    event.y = y;
+    m_scrollAnchors[addr] = event;
+    damageNeeded = true;
+  }
+}
+
+void OverlayState::handleVolumeCommand(std::istringstream& lineStream, const std::string& cmd, bool& damageNeeded) {
+    std::string addr;
+    int volume = 0;
+    if (lineStream >> addr >> volume) {
+        if (addr.empty()) return;
+
+        log("Received cmd: " + cmd + " for " + addr +
+            " vol: " + std::to_string(volume));
+
+        std::lock_guard<std::mutex> lock(m_mutex);
+
+        // Clear previous events for this address to avoid stacking
+        m_volumeEvents[addr].clear();
+
+        auto now = std::chrono::steady_clock::now();
+
+        // Create volume level event (shows in center)
+        OverlayEvent levelEvent;
+        levelEvent.type = OverlayType::VOLUME_LEVEL;
+        levelEvent.startTime = now;
+        levelEvent.volumeLevel = volume;
+        m_volumeEvents[addr].push_back(levelEvent);
+
+        // Create direction arrow event
+        OverlayEvent arrowEvent;
+        arrowEvent.startTime = now;
+        arrowEvent.volumeLevel = volume;
+        if (cmd == "vol-up") {
+          arrowEvent.type = OverlayType::VOLUME_UP;
+        } else if (cmd == "vol-down") {
+          arrowEvent.type = OverlayType::VOLUME_DOWN;
+        }
+        
+        if (arrowEvent.type != OverlayType::NONE) {
+             m_volumeEvents[addr].push_back(arrowEvent);
+        }
+
+        damageNeeded = true;
+    }
+}
+
+
 float OverlayState::calculateOpacity(const OverlayEvent& event) {
+  if (event.type == OverlayType::SCROLL_ANCHOR) return 1.0f;
+
   auto now = std::chrono::steady_clock::now();
   auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(
       now - event.startTime).count();
@@ -197,7 +245,28 @@ std::vector<OverlayInfo> OverlayState::getOverlayInfo(
   std::lock_guard<std::mutex> lock(m_mutex);
   std::vector<OverlayInfo> result;
 
-  // Volume events
+  appendScrollInfo(address, result);
+  appendVolumeInfo(address, result);
+  appendMuteInfo(address, result);
+
+  return result;
+}
+
+void OverlayState::appendScrollInfo(const std::string& address, std::vector<OverlayInfo>& result) {
+    if (m_scrollAnchors.contains(address)) {
+      auto& anchor = m_scrollAnchors[address];
+      OverlayInfo info;
+      info.type = OverlayType::SCROLL_ANCHOR;
+      info.opacity = 1.0f;
+      info.iconPath = config::getDefaultIconPath(OverlayType::SCROLL_ANCHOR);
+      info.hasCustomPos = true;
+      info.x = anchor.x;
+      info.y = anchor.y;
+      result.push_back(info);
+  }
+}
+
+void OverlayState::appendVolumeInfo(const std::string& address, std::vector<OverlayInfo>& result) {
   if (m_volumeEvents.contains(address)) {
     auto& events = m_volumeEvents[address];
     for (auto it = events.begin(); it != events.end();) {
@@ -222,8 +291,9 @@ std::vector<OverlayInfo> OverlayState::getOverlayInfo(
       }
     }
   }
+}
 
-  // Mute state
+void OverlayState::appendMuteInfo(const std::string& address, std::vector<OverlayInfo>& result) {
   if (m_mutedAddresses.contains(address)) {
     OverlayInfo info;
     info.type = OverlayType::MUTE;
@@ -231,6 +301,5 @@ std::vector<OverlayInfo> OverlayState::getOverlayInfo(
     info.iconPath = config::getDefaultIconPath(OverlayType::MUTE);
     result.push_back(info);
   }
-
-  return result;
 }
+

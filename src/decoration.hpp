@@ -42,6 +42,11 @@ class Superglue : public IHyprWindowDecoration {
       const CBox& windowBox,
       float alpha);
 
+  void renderAnchorLine(
+      const OverlayInfo& info,
+      const CBox& windowBox,
+      float alpha);
+
   PHLWINDOWREF m_pWindowRef;
   std::string m_windowAddress;
   CBox m_bAssignedBox;
