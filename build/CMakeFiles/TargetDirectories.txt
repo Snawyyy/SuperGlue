@@ -1,0 +1,3 @@
+/home/snawy/.config/hypr/plugins/superglue/build/CMakeFiles/superglue.dir
+/home/snawy/.config/hypr/plugins/superglue/build/CMakeFiles/edit_cache.dir
+/home/snawy/.config/hypr/plugins/superglue/build/CMakeFiles/rebuild_cache.dir
