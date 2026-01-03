@@ -85,12 +85,12 @@ clean: CMakeFiles/superglue.dir/clean
 CMakeFiles/superglue.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/snawy/.config/hypr/plugins/superglue/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target superglue"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/snawy/.config/hypr/plugins/superglue/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target superglue"
 .PHONY : CMakeFiles/superglue.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/superglue.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/snawy/.config/hypr/plugins/superglue/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/snawy/.config/hypr/plugins/superglue/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/superglue.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/snawy/.config/hypr/plugins/superglue/build/CMakeFiles 0
 .PHONY : CMakeFiles/superglue.dir/rule
@@ -102,7 +102,7 @@ superglue: CMakeFiles/superglue.dir/rule
 # codegen rule for target.
 CMakeFiles/superglue.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/snawy/.config/hypr/plugins/superglue/build/CMakeFiles --progress-num=1,2,3,4,5 "Finished codegen for target superglue"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/snawy/.config/hypr/plugins/superglue/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Finished codegen for target superglue"
 .PHONY : CMakeFiles/superglue.dir/codegen
 
 # clean rule for target.

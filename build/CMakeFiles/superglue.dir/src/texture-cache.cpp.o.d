@@ -1,8 +1,8 @@
-CMakeFiles/superglue.dir/src/GluePassElement.cpp.o: \
- /home/snawy/.config/hypr/plugins/superglue/src/GluePassElement.cpp \
+CMakeFiles/superglue.dir/src/texture-cache.cpp.o: \
+ /home/snawy/.config/hypr/plugins/superglue/src/texture-cache.cpp \
  /usr/include/stdc-predef.h \
- /home/snawy/.config/hypr/plugins/superglue/src/GluePassElement.hpp \
- /usr/include/hyprland/src/render/pass/PassElement.hpp \
+ /home/snawy/.config/hypr/plugins/superglue/src/texture-cache.hpp \
+ /usr/include/hyprland/src/render/OpenGL.hpp \
  /usr/include/hyprland/src/defines.hpp \
  /usr/include/hyprland/src/includes.hpp /usr/include/getopt.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -301,7 +301,6 @@ CMakeFiles/superglue.dir/src/GluePassElement.cpp.o: \
  /usr/include/hyprutils/memory/UniquePtr.hpp \
  /usr/include/hyprutils/memory/Atomic.hpp \
  /usr/include/hyprland/src/desktop/DesktopTypes.hpp \
- /usr/include/hyprland/src/render/OpenGL.hpp \
  /usr/include/hyprland/src/helpers/Monitor.hpp \
  /usr/include/c++/15.2.1/stack /usr/include/c++/15.2.1/deque \
  /usr/include/c++/15.2.1/bits/stl_deque.h \
@@ -359,9 +358,10 @@ CMakeFiles/superglue.dir/src/GluePassElement.cpp.o: \
  /usr/include/hyprland/src/render/Texture.hpp \
  /usr/include/hyprland/src/render/Framebuffer.hpp \
  /usr/include/hyprland/src/render/Renderbuffer.hpp \
- /usr/include/hyprland/src/render/pass/Pass.hpp /usr/include/EGL/egl.h \
- /usr/include/EGL/eglplatform.h /usr/include/EGL/eglext.h \
- /usr/include/GLES2/gl2ext.h \
+ /usr/include/hyprland/src/render/pass/Pass.hpp \
+ /usr/include/hyprland/src/render/pass/PassElement.hpp \
+ /usr/include/EGL/egl.h /usr/include/EGL/eglplatform.h \
+ /usr/include/EGL/eglext.h /usr/include/GLES2/gl2ext.h \
  /usr/include/hyprgraphics/resource/resources/ImageResource.hpp \
  /usr/include/hyprgraphics/resource/resources/AsyncResource.hpp \
  /usr/include/hyprgraphics/cairo/CairoSurface.hpp \
@@ -378,17 +378,4 @@ CMakeFiles/superglue.dir/src/GluePassElement.cpp.o: \
  /usr/include/hyprland/src/protocols/DRMSyncobj.hpp \
  /usr/include/hyprland/src/helpers/sync/SyncReleaser.hpp \
  /usr/include/hyprland/protocols/linux-drm-syncobj-v1.hpp \
- /usr/include/hyprland/src/protocols/types/SurfaceRole.hpp \
- /home/snawy/.config/hypr/plugins/superglue/src/Superglue.hpp \
- /usr/include/hyprland/src/render/decorations/IHyprWindowDecoration.hpp \
- /usr/include/hyprland/src/render/decorations/DecorationPositioner.hpp \
- /home/snawy/.config/hypr/plugins/superglue/src/OverlayState.hpp \
- /usr/include/c++/15.2.1/unordered_set \
- /usr/include/c++/15.2.1/bits/unordered_set.h \
- /usr/include/c++/15.2.1/thread /usr/include/c++/15.2.1/stop_token \
- /usr/include/c++/15.2.1/bits/std_thread.h \
- /usr/include/c++/15.2.1/semaphore \
- /usr/include/c++/15.2.1/bits/semaphore_base.h \
- /usr/include/c++/15.2.1/bits/atomic_timed_wait.h \
- /usr/include/c++/15.2.1/bits/this_thread_sleep.h /usr/include/sys/time.h \
- /usr/include/semaphore.h /usr/include/bits/semaphore.h
+ /usr/include/hyprland/src/protocols/types/SurfaceRole.hpp

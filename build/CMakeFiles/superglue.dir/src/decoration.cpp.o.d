@@ -1,7 +1,7 @@
-CMakeFiles/superglue.dir/src/Superglue.cpp.o: \
- /home/snawy/.config/hypr/plugins/superglue/src/Superglue.cpp \
+CMakeFiles/superglue.dir/src/decoration.cpp.o: \
+ /home/snawy/.config/hypr/plugins/superglue/src/decoration.cpp \
  /usr/include/stdc-predef.h \
- /home/snawy/.config/hypr/plugins/superglue/src/Superglue.hpp \
+ /home/snawy/.config/hypr/plugins/superglue/src/decoration.hpp \
  /usr/include/hyprland/src/render/decorations/IHyprWindowDecoration.hpp \
  /usr/include/c++/15.2.1/any /usr/include/c++/15.2.1/bits/version.h \
  /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
@@ -381,16 +381,13 @@ CMakeFiles/superglue.dir/src/Superglue.cpp.o: \
  /usr/include/hyprland/src/helpers/sync/SyncReleaser.hpp \
  /usr/include/hyprland/protocols/linux-drm-syncobj-v1.hpp \
  /usr/include/hyprland/src/protocols/types/SurfaceRole.hpp \
- /home/snawy/.config/hypr/plugins/superglue/src/OverlayState.hpp \
+ /home/snawy/.config/hypr/plugins/superglue/src/types.hpp \
+ /home/snawy/.config/hypr/plugins/superglue/src/config.hpp \
+ /home/snawy/.config/hypr/plugins/superglue/src/overlay-state.hpp \
  /usr/include/c++/15.2.1/unordered_set \
  /usr/include/c++/15.2.1/bits/unordered_set.h \
- /usr/include/c++/15.2.1/thread /usr/include/c++/15.2.1/stop_token \
- /usr/include/c++/15.2.1/bits/std_thread.h \
- /usr/include/c++/15.2.1/semaphore \
- /usr/include/c++/15.2.1/bits/semaphore_base.h \
- /usr/include/c++/15.2.1/bits/atomic_timed_wait.h \
- /usr/include/c++/15.2.1/bits/this_thread_sleep.h /usr/include/sys/time.h \
- /usr/include/semaphore.h /usr/include/bits/semaphore.h \
+ /home/snawy/.config/hypr/plugins/superglue/src/texture-cache.hpp \
+ /home/snawy/.config/hypr/plugins/superglue/src/pass-element.hpp \
  /usr/include/hyprland/src/Compositor.hpp /usr/include/sys/resource.h \
  /usr/include/bits/resource.h /usr/include/bits/types/struct_rusage.h \
  /usr/include/hyprland/src/managers/XWaylandManager.hpp \
@@ -423,11 +420,15 @@ CMakeFiles/superglue.dir/src/Superglue.cpp.o: \
  /usr/include/aquamarine/backend/Backend.hpp \
  /usr/include/hyprutils/cli/Logger.hpp \
  /usr/include/c++/15.2.1/condition_variable \
+ /usr/include/c++/15.2.1/stop_token \
+ /usr/include/c++/15.2.1/bits/std_thread.h \
+ /usr/include/c++/15.2.1/semaphore \
+ /usr/include/c++/15.2.1/bits/semaphore_base.h \
+ /usr/include/c++/15.2.1/bits/atomic_timed_wait.h \
+ /usr/include/c++/15.2.1/bits/this_thread_sleep.h /usr/include/sys/time.h \
+ /usr/include/semaphore.h /usr/include/bits/semaphore.h \
  /usr/include/aquamarine/backend/Session.hpp \
  /usr/include/aquamarine/input/Input.hpp \
  /usr/include/hyprland/src/render/Renderer.hpp \
  /usr/include/hyprland/src/desktop/LayerSurface.hpp \
- /usr/include/hyprland/protocols/cursor-shape-v1.hpp \
- /usr/include/hyprland/src/config/ConfigManager.hpp \
- /usr/include/hyprland/src/desktop/LayerRule.hpp \
- /home/snawy/.config/hypr/plugins/superglue/src/GluePassElement.hpp
+ /usr/include/hyprland/protocols/cursor-shape-v1.hpp

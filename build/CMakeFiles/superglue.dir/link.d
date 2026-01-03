@@ -2,9 +2,11 @@ superglue.so: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o \
   CMakeFiles/superglue.dir/src/main.cpp.o \
-  CMakeFiles/superglue.dir/src/Superglue.cpp.o \
-  CMakeFiles/superglue.dir/src/OverlayState.cpp.o \
-  CMakeFiles/superglue.dir/src/GluePassElement.cpp.o \
+  CMakeFiles/superglue.dir/src/decoration.cpp.o \
+  CMakeFiles/superglue.dir/src/overlay-state.cpp.o \
+  CMakeFiles/superglue.dir/src/file-watcher.cpp.o \
+  CMakeFiles/superglue.dir/src/texture-cache.cpp.o \
+  CMakeFiles/superglue.dir/src/pass-element.cpp.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libstdc++.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libpixman-1.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libdrm.so \
@@ -43,11 +45,15 @@ superglue.so: \
 
 CMakeFiles/superglue.dir/src/main.cpp.o:
 
-CMakeFiles/superglue.dir/src/Superglue.cpp.o:
+CMakeFiles/superglue.dir/src/decoration.cpp.o:
 
-CMakeFiles/superglue.dir/src/OverlayState.cpp.o:
+CMakeFiles/superglue.dir/src/overlay-state.cpp.o:
 
-CMakeFiles/superglue.dir/src/GluePassElement.cpp.o:
+CMakeFiles/superglue.dir/src/file-watcher.cpp.o:
+
+CMakeFiles/superglue.dir/src/texture-cache.cpp.o:
+
+CMakeFiles/superglue.dir/src/pass-element.cpp.o:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libstdc++.so:
 

@@ -86,66 +86,98 @@ CMakeFiles/superglue.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/superglue.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/snawy/.config/hypr/plugins/superglue/src/main.cpp -o CMakeFiles/superglue.dir/src/main.cpp.s
 
-CMakeFiles/superglue.dir/src/Superglue.cpp.o: CMakeFiles/superglue.dir/flags.make
-CMakeFiles/superglue.dir/src/Superglue.cpp.o: /home/snawy/.config/hypr/plugins/superglue/src/Superglue.cpp
-CMakeFiles/superglue.dir/src/Superglue.cpp.o: CMakeFiles/superglue.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/snawy/.config/hypr/plugins/superglue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/superglue.dir/src/Superglue.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/superglue.dir/src/Superglue.cpp.o -MF CMakeFiles/superglue.dir/src/Superglue.cpp.o.d -o CMakeFiles/superglue.dir/src/Superglue.cpp.o -c /home/snawy/.config/hypr/plugins/superglue/src/Superglue.cpp
+CMakeFiles/superglue.dir/src/decoration.cpp.o: CMakeFiles/superglue.dir/flags.make
+CMakeFiles/superglue.dir/src/decoration.cpp.o: /home/snawy/.config/hypr/plugins/superglue/src/decoration.cpp
+CMakeFiles/superglue.dir/src/decoration.cpp.o: CMakeFiles/superglue.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/snawy/.config/hypr/plugins/superglue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/superglue.dir/src/decoration.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/superglue.dir/src/decoration.cpp.o -MF CMakeFiles/superglue.dir/src/decoration.cpp.o.d -o CMakeFiles/superglue.dir/src/decoration.cpp.o -c /home/snawy/.config/hypr/plugins/superglue/src/decoration.cpp
 
-CMakeFiles/superglue.dir/src/Superglue.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/superglue.dir/src/Superglue.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/snawy/.config/hypr/plugins/superglue/src/Superglue.cpp > CMakeFiles/superglue.dir/src/Superglue.cpp.i
+CMakeFiles/superglue.dir/src/decoration.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/superglue.dir/src/decoration.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/snawy/.config/hypr/plugins/superglue/src/decoration.cpp > CMakeFiles/superglue.dir/src/decoration.cpp.i
 
-CMakeFiles/superglue.dir/src/Superglue.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/superglue.dir/src/Superglue.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/snawy/.config/hypr/plugins/superglue/src/Superglue.cpp -o CMakeFiles/superglue.dir/src/Superglue.cpp.s
+CMakeFiles/superglue.dir/src/decoration.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/superglue.dir/src/decoration.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/snawy/.config/hypr/plugins/superglue/src/decoration.cpp -o CMakeFiles/superglue.dir/src/decoration.cpp.s
 
-CMakeFiles/superglue.dir/src/OverlayState.cpp.o: CMakeFiles/superglue.dir/flags.make
-CMakeFiles/superglue.dir/src/OverlayState.cpp.o: /home/snawy/.config/hypr/plugins/superglue/src/OverlayState.cpp
-CMakeFiles/superglue.dir/src/OverlayState.cpp.o: CMakeFiles/superglue.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/snawy/.config/hypr/plugins/superglue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/superglue.dir/src/OverlayState.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/superglue.dir/src/OverlayState.cpp.o -MF CMakeFiles/superglue.dir/src/OverlayState.cpp.o.d -o CMakeFiles/superglue.dir/src/OverlayState.cpp.o -c /home/snawy/.config/hypr/plugins/superglue/src/OverlayState.cpp
+CMakeFiles/superglue.dir/src/overlay-state.cpp.o: CMakeFiles/superglue.dir/flags.make
+CMakeFiles/superglue.dir/src/overlay-state.cpp.o: /home/snawy/.config/hypr/plugins/superglue/src/overlay-state.cpp
+CMakeFiles/superglue.dir/src/overlay-state.cpp.o: CMakeFiles/superglue.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/snawy/.config/hypr/plugins/superglue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/superglue.dir/src/overlay-state.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/superglue.dir/src/overlay-state.cpp.o -MF CMakeFiles/superglue.dir/src/overlay-state.cpp.o.d -o CMakeFiles/superglue.dir/src/overlay-state.cpp.o -c /home/snawy/.config/hypr/plugins/superglue/src/overlay-state.cpp
 
-CMakeFiles/superglue.dir/src/OverlayState.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/superglue.dir/src/OverlayState.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/snawy/.config/hypr/plugins/superglue/src/OverlayState.cpp > CMakeFiles/superglue.dir/src/OverlayState.cpp.i
+CMakeFiles/superglue.dir/src/overlay-state.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/superglue.dir/src/overlay-state.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/snawy/.config/hypr/plugins/superglue/src/overlay-state.cpp > CMakeFiles/superglue.dir/src/overlay-state.cpp.i
 
-CMakeFiles/superglue.dir/src/OverlayState.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/superglue.dir/src/OverlayState.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/snawy/.config/hypr/plugins/superglue/src/OverlayState.cpp -o CMakeFiles/superglue.dir/src/OverlayState.cpp.s
+CMakeFiles/superglue.dir/src/overlay-state.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/superglue.dir/src/overlay-state.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/snawy/.config/hypr/plugins/superglue/src/overlay-state.cpp -o CMakeFiles/superglue.dir/src/overlay-state.cpp.s
 
-CMakeFiles/superglue.dir/src/GluePassElement.cpp.o: CMakeFiles/superglue.dir/flags.make
-CMakeFiles/superglue.dir/src/GluePassElement.cpp.o: /home/snawy/.config/hypr/plugins/superglue/src/GluePassElement.cpp
-CMakeFiles/superglue.dir/src/GluePassElement.cpp.o: CMakeFiles/superglue.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/snawy/.config/hypr/plugins/superglue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/superglue.dir/src/GluePassElement.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/superglue.dir/src/GluePassElement.cpp.o -MF CMakeFiles/superglue.dir/src/GluePassElement.cpp.o.d -o CMakeFiles/superglue.dir/src/GluePassElement.cpp.o -c /home/snawy/.config/hypr/plugins/superglue/src/GluePassElement.cpp
+CMakeFiles/superglue.dir/src/file-watcher.cpp.o: CMakeFiles/superglue.dir/flags.make
+CMakeFiles/superglue.dir/src/file-watcher.cpp.o: /home/snawy/.config/hypr/plugins/superglue/src/file-watcher.cpp
+CMakeFiles/superglue.dir/src/file-watcher.cpp.o: CMakeFiles/superglue.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/snawy/.config/hypr/plugins/superglue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/superglue.dir/src/file-watcher.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/superglue.dir/src/file-watcher.cpp.o -MF CMakeFiles/superglue.dir/src/file-watcher.cpp.o.d -o CMakeFiles/superglue.dir/src/file-watcher.cpp.o -c /home/snawy/.config/hypr/plugins/superglue/src/file-watcher.cpp
 
-CMakeFiles/superglue.dir/src/GluePassElement.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/superglue.dir/src/GluePassElement.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/snawy/.config/hypr/plugins/superglue/src/GluePassElement.cpp > CMakeFiles/superglue.dir/src/GluePassElement.cpp.i
+CMakeFiles/superglue.dir/src/file-watcher.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/superglue.dir/src/file-watcher.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/snawy/.config/hypr/plugins/superglue/src/file-watcher.cpp > CMakeFiles/superglue.dir/src/file-watcher.cpp.i
 
-CMakeFiles/superglue.dir/src/GluePassElement.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/superglue.dir/src/GluePassElement.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/snawy/.config/hypr/plugins/superglue/src/GluePassElement.cpp -o CMakeFiles/superglue.dir/src/GluePassElement.cpp.s
+CMakeFiles/superglue.dir/src/file-watcher.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/superglue.dir/src/file-watcher.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/snawy/.config/hypr/plugins/superglue/src/file-watcher.cpp -o CMakeFiles/superglue.dir/src/file-watcher.cpp.s
+
+CMakeFiles/superglue.dir/src/texture-cache.cpp.o: CMakeFiles/superglue.dir/flags.make
+CMakeFiles/superglue.dir/src/texture-cache.cpp.o: /home/snawy/.config/hypr/plugins/superglue/src/texture-cache.cpp
+CMakeFiles/superglue.dir/src/texture-cache.cpp.o: CMakeFiles/superglue.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/snawy/.config/hypr/plugins/superglue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/superglue.dir/src/texture-cache.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/superglue.dir/src/texture-cache.cpp.o -MF CMakeFiles/superglue.dir/src/texture-cache.cpp.o.d -o CMakeFiles/superglue.dir/src/texture-cache.cpp.o -c /home/snawy/.config/hypr/plugins/superglue/src/texture-cache.cpp
+
+CMakeFiles/superglue.dir/src/texture-cache.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/superglue.dir/src/texture-cache.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/snawy/.config/hypr/plugins/superglue/src/texture-cache.cpp > CMakeFiles/superglue.dir/src/texture-cache.cpp.i
+
+CMakeFiles/superglue.dir/src/texture-cache.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/superglue.dir/src/texture-cache.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/snawy/.config/hypr/plugins/superglue/src/texture-cache.cpp -o CMakeFiles/superglue.dir/src/texture-cache.cpp.s
+
+CMakeFiles/superglue.dir/src/pass-element.cpp.o: CMakeFiles/superglue.dir/flags.make
+CMakeFiles/superglue.dir/src/pass-element.cpp.o: /home/snawy/.config/hypr/plugins/superglue/src/pass-element.cpp
+CMakeFiles/superglue.dir/src/pass-element.cpp.o: CMakeFiles/superglue.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/snawy/.config/hypr/plugins/superglue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/superglue.dir/src/pass-element.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/superglue.dir/src/pass-element.cpp.o -MF CMakeFiles/superglue.dir/src/pass-element.cpp.o.d -o CMakeFiles/superglue.dir/src/pass-element.cpp.o -c /home/snawy/.config/hypr/plugins/superglue/src/pass-element.cpp
+
+CMakeFiles/superglue.dir/src/pass-element.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/superglue.dir/src/pass-element.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/snawy/.config/hypr/plugins/superglue/src/pass-element.cpp > CMakeFiles/superglue.dir/src/pass-element.cpp.i
+
+CMakeFiles/superglue.dir/src/pass-element.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/superglue.dir/src/pass-element.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/snawy/.config/hypr/plugins/superglue/src/pass-element.cpp -o CMakeFiles/superglue.dir/src/pass-element.cpp.s
 
 # Object files for target superglue
 superglue_OBJECTS = \
 "CMakeFiles/superglue.dir/src/main.cpp.o" \
-"CMakeFiles/superglue.dir/src/Superglue.cpp.o" \
-"CMakeFiles/superglue.dir/src/OverlayState.cpp.o" \
-"CMakeFiles/superglue.dir/src/GluePassElement.cpp.o"
+"CMakeFiles/superglue.dir/src/decoration.cpp.o" \
+"CMakeFiles/superglue.dir/src/overlay-state.cpp.o" \
+"CMakeFiles/superglue.dir/src/file-watcher.cpp.o" \
+"CMakeFiles/superglue.dir/src/texture-cache.cpp.o" \
+"CMakeFiles/superglue.dir/src/pass-element.cpp.o"
 
 # External object files for target superglue
 superglue_EXTERNAL_OBJECTS =
 
 superglue.so: CMakeFiles/superglue.dir/src/main.cpp.o
-superglue.so: CMakeFiles/superglue.dir/src/Superglue.cpp.o
-superglue.so: CMakeFiles/superglue.dir/src/OverlayState.cpp.o
-superglue.so: CMakeFiles/superglue.dir/src/GluePassElement.cpp.o
+superglue.so: CMakeFiles/superglue.dir/src/decoration.cpp.o
+superglue.so: CMakeFiles/superglue.dir/src/overlay-state.cpp.o
+superglue.so: CMakeFiles/superglue.dir/src/file-watcher.cpp.o
+superglue.so: CMakeFiles/superglue.dir/src/texture-cache.cpp.o
+superglue.so: CMakeFiles/superglue.dir/src/pass-element.cpp.o
 superglue.so: CMakeFiles/superglue.dir/build.make
 superglue.so: CMakeFiles/superglue.dir/compiler_depend.ts
 superglue.so: CMakeFiles/superglue.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/snawy/.config/hypr/plugins/superglue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX shared library superglue.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/snawy/.config/hypr/plugins/superglue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX shared library superglue.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/superglue.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -8,10 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/snawy/.config/hypr/plugins/superglue/src/GluePassElement.cpp" "CMakeFiles/superglue.dir/src/GluePassElement.cpp.o" "gcc" "CMakeFiles/superglue.dir/src/GluePassElement.cpp.o.d"
-  "/home/snawy/.config/hypr/plugins/superglue/src/OverlayState.cpp" "CMakeFiles/superglue.dir/src/OverlayState.cpp.o" "gcc" "CMakeFiles/superglue.dir/src/OverlayState.cpp.o.d"
-  "/home/snawy/.config/hypr/plugins/superglue/src/Superglue.cpp" "CMakeFiles/superglue.dir/src/Superglue.cpp.o" "gcc" "CMakeFiles/superglue.dir/src/Superglue.cpp.o.d"
+  "/home/snawy/.config/hypr/plugins/superglue/src/decoration.cpp" "CMakeFiles/superglue.dir/src/decoration.cpp.o" "gcc" "CMakeFiles/superglue.dir/src/decoration.cpp.o.d"
+  "/home/snawy/.config/hypr/plugins/superglue/src/file-watcher.cpp" "CMakeFiles/superglue.dir/src/file-watcher.cpp.o" "gcc" "CMakeFiles/superglue.dir/src/file-watcher.cpp.o.d"
   "/home/snawy/.config/hypr/plugins/superglue/src/main.cpp" "CMakeFiles/superglue.dir/src/main.cpp.o" "gcc" "CMakeFiles/superglue.dir/src/main.cpp.o.d"
+  "/home/snawy/.config/hypr/plugins/superglue/src/overlay-state.cpp" "CMakeFiles/superglue.dir/src/overlay-state.cpp.o" "gcc" "CMakeFiles/superglue.dir/src/overlay-state.cpp.o.d"
+  "/home/snawy/.config/hypr/plugins/superglue/src/pass-element.cpp" "CMakeFiles/superglue.dir/src/pass-element.cpp.o" "gcc" "CMakeFiles/superglue.dir/src/pass-element.cpp.o.d"
+  "/home/snawy/.config/hypr/plugins/superglue/src/texture-cache.cpp" "CMakeFiles/superglue.dir/src/texture-cache.cpp.o" "gcc" "CMakeFiles/superglue.dir/src/texture-cache.cpp.o.d"
   "" "superglue.so" "gcc" "CMakeFiles/superglue.dir/link.d"
   )
 

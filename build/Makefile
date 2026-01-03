@@ -129,77 +129,53 @@ superglue/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/build
 .PHONY : superglue/fast
 
-src/GluePassElement.o: src/GluePassElement.cpp.o
-.PHONY : src/GluePassElement.o
+src/decoration.o: src/decoration.cpp.o
+.PHONY : src/decoration.o
 
 # target to build an object file
-src/GluePassElement.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/src/GluePassElement.cpp.o
-.PHONY : src/GluePassElement.cpp.o
+src/decoration.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/src/decoration.cpp.o
+.PHONY : src/decoration.cpp.o
 
-src/GluePassElement.i: src/GluePassElement.cpp.i
-.PHONY : src/GluePassElement.i
+src/decoration.i: src/decoration.cpp.i
+.PHONY : src/decoration.i
 
 # target to preprocess a source file
-src/GluePassElement.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/src/GluePassElement.cpp.i
-.PHONY : src/GluePassElement.cpp.i
+src/decoration.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/src/decoration.cpp.i
+.PHONY : src/decoration.cpp.i
 
-src/GluePassElement.s: src/GluePassElement.cpp.s
-.PHONY : src/GluePassElement.s
+src/decoration.s: src/decoration.cpp.s
+.PHONY : src/decoration.s
 
 # target to generate assembly for a file
-src/GluePassElement.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/src/GluePassElement.cpp.s
-.PHONY : src/GluePassElement.cpp.s
+src/decoration.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/src/decoration.cpp.s
+.PHONY : src/decoration.cpp.s
 
-src/OverlayState.o: src/OverlayState.cpp.o
-.PHONY : src/OverlayState.o
+src/file-watcher.o: src/file-watcher.cpp.o
+.PHONY : src/file-watcher.o
 
 # target to build an object file
-src/OverlayState.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/src/OverlayState.cpp.o
-.PHONY : src/OverlayState.cpp.o
+src/file-watcher.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/src/file-watcher.cpp.o
+.PHONY : src/file-watcher.cpp.o
 
-src/OverlayState.i: src/OverlayState.cpp.i
-.PHONY : src/OverlayState.i
-
-# target to preprocess a source file
-src/OverlayState.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/src/OverlayState.cpp.i
-.PHONY : src/OverlayState.cpp.i
-
-src/OverlayState.s: src/OverlayState.cpp.s
-.PHONY : src/OverlayState.s
-
-# target to generate assembly for a file
-src/OverlayState.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/src/OverlayState.cpp.s
-.PHONY : src/OverlayState.cpp.s
-
-src/Superglue.o: src/Superglue.cpp.o
-.PHONY : src/Superglue.o
-
-# target to build an object file
-src/Superglue.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/src/Superglue.cpp.o
-.PHONY : src/Superglue.cpp.o
-
-src/Superglue.i: src/Superglue.cpp.i
-.PHONY : src/Superglue.i
+src/file-watcher.i: src/file-watcher.cpp.i
+.PHONY : src/file-watcher.i
 
 # target to preprocess a source file
-src/Superglue.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/src/Superglue.cpp.i
-.PHONY : src/Superglue.cpp.i
+src/file-watcher.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/src/file-watcher.cpp.i
+.PHONY : src/file-watcher.cpp.i
 
-src/Superglue.s: src/Superglue.cpp.s
-.PHONY : src/Superglue.s
+src/file-watcher.s: src/file-watcher.cpp.s
+.PHONY : src/file-watcher.s
 
 # target to generate assembly for a file
-src/Superglue.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/src/Superglue.cpp.s
-.PHONY : src/Superglue.cpp.s
+src/file-watcher.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/src/file-watcher.cpp.s
+.PHONY : src/file-watcher.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -225,6 +201,78 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/overlay-state.o: src/overlay-state.cpp.o
+.PHONY : src/overlay-state.o
+
+# target to build an object file
+src/overlay-state.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/src/overlay-state.cpp.o
+.PHONY : src/overlay-state.cpp.o
+
+src/overlay-state.i: src/overlay-state.cpp.i
+.PHONY : src/overlay-state.i
+
+# target to preprocess a source file
+src/overlay-state.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/src/overlay-state.cpp.i
+.PHONY : src/overlay-state.cpp.i
+
+src/overlay-state.s: src/overlay-state.cpp.s
+.PHONY : src/overlay-state.s
+
+# target to generate assembly for a file
+src/overlay-state.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/src/overlay-state.cpp.s
+.PHONY : src/overlay-state.cpp.s
+
+src/pass-element.o: src/pass-element.cpp.o
+.PHONY : src/pass-element.o
+
+# target to build an object file
+src/pass-element.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/src/pass-element.cpp.o
+.PHONY : src/pass-element.cpp.o
+
+src/pass-element.i: src/pass-element.cpp.i
+.PHONY : src/pass-element.i
+
+# target to preprocess a source file
+src/pass-element.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/src/pass-element.cpp.i
+.PHONY : src/pass-element.cpp.i
+
+src/pass-element.s: src/pass-element.cpp.s
+.PHONY : src/pass-element.s
+
+# target to generate assembly for a file
+src/pass-element.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/src/pass-element.cpp.s
+.PHONY : src/pass-element.cpp.s
+
+src/texture-cache.o: src/texture-cache.cpp.o
+.PHONY : src/texture-cache.o
+
+# target to build an object file
+src/texture-cache.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/src/texture-cache.cpp.o
+.PHONY : src/texture-cache.cpp.o
+
+src/texture-cache.i: src/texture-cache.cpp.i
+.PHONY : src/texture-cache.i
+
+# target to preprocess a source file
+src/texture-cache.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/src/texture-cache.cpp.i
+.PHONY : src/texture-cache.cpp.i
+
+src/texture-cache.s: src/texture-cache.cpp.s
+.PHONY : src/texture-cache.s
+
+# target to generate assembly for a file
+src/texture-cache.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superglue.dir/build.make CMakeFiles/superglue.dir/src/texture-cache.cpp.s
+.PHONY : src/texture-cache.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -234,18 +282,24 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... superglue"
-	@echo "... src/GluePassElement.o"
-	@echo "... src/GluePassElement.i"
-	@echo "... src/GluePassElement.s"
-	@echo "... src/OverlayState.o"
-	@echo "... src/OverlayState.i"
-	@echo "... src/OverlayState.s"
-	@echo "... src/Superglue.o"
-	@echo "... src/Superglue.i"
-	@echo "... src/Superglue.s"
+	@echo "... src/decoration.o"
+	@echo "... src/decoration.i"
+	@echo "... src/decoration.s"
+	@echo "... src/file-watcher.o"
+	@echo "... src/file-watcher.i"
+	@echo "... src/file-watcher.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/overlay-state.o"
+	@echo "... src/overlay-state.i"
+	@echo "... src/overlay-state.s"
+	@echo "... src/pass-element.o"
+	@echo "... src/pass-element.i"
+	@echo "... src/pass-element.s"
+	@echo "... src/texture-cache.o"
+	@echo "... src/texture-cache.i"
+	@echo "... src/texture-cache.s"
 .PHONY : help
 
 

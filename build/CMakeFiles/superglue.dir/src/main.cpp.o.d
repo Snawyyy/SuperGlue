@@ -1,7 +1,7 @@
 CMakeFiles/superglue.dir/src/main.cpp.o: \
  /home/snawy/.config/hypr/plugins/superglue/src/main.cpp \
  /usr/include/stdc-predef.h \
- /home/snawy/.config/hypr/plugins/superglue/src/OverlayState.hpp \
+ /home/snawy/.config/hypr/plugins/superglue/src/overlay-state.hpp \
  /usr/include/c++/15.2.1/string \
  /usr/include/c++/15.2.1/bits/requires_hosted.h \
  /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
@@ -121,15 +121,17 @@ CMakeFiles/superglue.dir/src/main.cpp.o: \
  /usr/include/c++/15.2.1/bits/erase_if.h \
  /usr/include/c++/15.2.1/unordered_map \
  /usr/include/c++/15.2.1/bits/unordered_map.h \
- /usr/include/c++/15.2.1/thread /usr/include/c++/15.2.1/stop_token \
- /usr/include/c++/15.2.1/atomic \
- /usr/include/c++/15.2.1/bits/atomic_base.h \
- /usr/include/c++/15.2.1/bits/atomic_lockfree_defines.h \
- /usr/include/c++/15.2.1/bits/atomic_wait.h \
- /usr/include/c++/15.2.1/cstdint \
+ /usr/include/c++/15.2.1/mutex /usr/include/c++/15.2.1/bits/chrono.h \
+ /usr/include/c++/15.2.1/ratio /usr/include/c++/15.2.1/cstdint \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/stdint-uintn.h \
- /usr/include/bits/stdint-least.h \
+ /usr/include/bits/stdint-least.h /usr/include/c++/15.2.1/limits \
+ /usr/include/c++/15.2.1/ctime /usr/include/time.h \
+ /usr/include/bits/time.h /usr/include/bits/timex.h \
+ /usr/include/bits/types/struct_tm.h \
+ /usr/include/bits/types/struct_itimerspec.h \
+ /usr/include/c++/15.2.1/bits/parse_numbers.h \
+ /usr/include/c++/15.2.1/bits/std_mutex.h \
  /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/gthr.h \
  /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/gthr-default.h \
  /usr/include/pthread.h /usr/include/sched.h /usr/include/bits/sched.h \
@@ -140,11 +142,48 @@ CMakeFiles/superglue.dir/src/main.cpp.o: \
  /usr/include/linux/stddef.h /usr/include/asm/posix_types.h \
  /usr/include/asm/posix_types_64.h /usr/include/asm-generic/posix_types.h \
  /usr/include/bits/types/struct_sched_param.h /usr/include/bits/cpu-set.h \
- /usr/include/time.h /usr/include/bits/time.h /usr/include/bits/timex.h \
- /usr/include/bits/types/struct_tm.h \
- /usr/include/bits/types/struct_itimerspec.h /usr/include/bits/setjmp.h \
+ /usr/include/bits/setjmp.h \
  /usr/include/bits/types/struct___jmp_buf_tag.h \
  /usr/include/bits/pthread_stack_min-dynamic.h \
+ /usr/include/c++/15.2.1/bits/unique_lock.h \
+ /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/error_constants.h \
+ /usr/include/c++/15.2.1/ext/atomicity.h \
+ /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/atomic_word.h \
+ /usr/include/sys/single_threaded.h /usr/include/c++/15.2.1/memory \
+ /usr/include/c++/15.2.1/bits/stl_tempbuf.h \
+ /usr/include/c++/15.2.1/bits/stl_uninitialized.h \
+ /usr/include/c++/15.2.1/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/15.2.1/bits/align.h \
+ /usr/include/c++/15.2.1/bits/unique_ptr.h \
+ /usr/include/c++/15.2.1/bits/ostream.h /usr/include/c++/15.2.1/ios \
+ /usr/include/c++/15.2.1/exception \
+ /usr/include/c++/15.2.1/bits/exception_ptr.h \
+ /usr/include/c++/15.2.1/bits/cxxabi_init_exception.h \
+ /usr/include/c++/15.2.1/typeinfo \
+ /usr/include/c++/15.2.1/bits/nested_exception.h \
+ /usr/include/c++/15.2.1/bits/ios_base.h \
+ /usr/include/c++/15.2.1/bits/locale_classes.h \
+ /usr/include/c++/15.2.1/bits/locale_classes.tcc \
+ /usr/include/c++/15.2.1/system_error /usr/include/c++/15.2.1/stdexcept \
+ /usr/include/c++/15.2.1/streambuf \
+ /usr/include/c++/15.2.1/bits/streambuf.tcc \
+ /usr/include/c++/15.2.1/bits/basic_ios.h \
+ /usr/include/c++/15.2.1/bits/locale_facets.h \
+ /usr/include/c++/15.2.1/cwctype /usr/include/wctype.h \
+ /usr/include/bits/wctype-wchar.h \
+ /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/ctype_base.h \
+ /usr/include/c++/15.2.1/bits/streambuf_iterator.h \
+ /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/ctype_inline.h \
+ /usr/include/c++/15.2.1/bits/locale_facets.tcc \
+ /usr/include/c++/15.2.1/bits/basic_ios.tcc \
+ /usr/include/c++/15.2.1/bits/shared_ptr.h \
+ /usr/include/c++/15.2.1/bits/shared_ptr_base.h \
+ /usr/include/c++/15.2.1/bits/allocated_ptr.h \
+ /usr/include/c++/15.2.1/ext/concurrence.h \
+ /usr/include/c++/15.2.1/bits/shared_ptr_atomic.h \
+ /usr/include/c++/15.2.1/bits/atomic_base.h \
+ /usr/include/c++/15.2.1/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/15.2.1/bits/atomic_wait.h \
  /usr/include/c++/15.2.1/climits \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/limits.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/syslimits.h \
@@ -158,77 +197,11 @@ CMakeFiles/superglue.dir/src/main.cpp.o: \
  /usr/include/linux/close_range.h /usr/include/syscall.h \
  /usr/include/sys/syscall.h /usr/include/asm/unistd.h \
  /usr/include/asm/unistd_64.h /usr/include/bits/syscall.h \
- /usr/include/c++/15.2.1/bits/std_mutex.h \
- /usr/include/c++/15.2.1/bits/std_thread.h \
- /usr/include/c++/15.2.1/bits/unique_ptr.h \
- /usr/include/c++/15.2.1/bits/ostream.h /usr/include/c++/15.2.1/ios \
- /usr/include/c++/15.2.1/exception \
- /usr/include/c++/15.2.1/bits/exception_ptr.h \
- /usr/include/c++/15.2.1/bits/cxxabi_init_exception.h \
- /usr/include/c++/15.2.1/typeinfo \
- /usr/include/c++/15.2.1/bits/nested_exception.h \
- /usr/include/c++/15.2.1/bits/ios_base.h \
- /usr/include/c++/15.2.1/ext/atomicity.h \
- /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/atomic_word.h \
- /usr/include/sys/single_threaded.h \
- /usr/include/c++/15.2.1/bits/locale_classes.h \
- /usr/include/c++/15.2.1/bits/locale_classes.tcc \
- /usr/include/c++/15.2.1/system_error \
- /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/error_constants.h \
- /usr/include/c++/15.2.1/stdexcept /usr/include/c++/15.2.1/streambuf \
- /usr/include/c++/15.2.1/bits/streambuf.tcc \
- /usr/include/c++/15.2.1/bits/basic_ios.h \
- /usr/include/c++/15.2.1/bits/locale_facets.h \
- /usr/include/c++/15.2.1/cwctype /usr/include/wctype.h \
- /usr/include/bits/wctype-wchar.h \
- /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/ctype_base.h \
- /usr/include/c++/15.2.1/bits/streambuf_iterator.h \
- /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/ctype_inline.h \
- /usr/include/c++/15.2.1/bits/locale_facets.tcc \
- /usr/include/c++/15.2.1/bits/basic_ios.tcc \
- /usr/include/c++/15.2.1/semaphore \
- /usr/include/c++/15.2.1/bits/semaphore_base.h \
- /usr/include/c++/15.2.1/bits/chrono.h /usr/include/c++/15.2.1/ratio \
- /usr/include/c++/15.2.1/limits /usr/include/c++/15.2.1/ctime \
- /usr/include/c++/15.2.1/bits/parse_numbers.h \
- /usr/include/c++/15.2.1/bits/atomic_timed_wait.h \
- /usr/include/c++/15.2.1/bits/this_thread_sleep.h /usr/include/sys/time.h \
- /usr/include/semaphore.h /usr/include/bits/semaphore.h \
- /usr/include/c++/15.2.1/format /usr/include/c++/15.2.1/array \
- /usr/include/c++/15.2.1/charconv /usr/include/c++/15.2.1/locale \
- /usr/include/c++/15.2.1/bits/locale_facets_nonio.h \
- /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/time_members.h \
- /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/messages_members.h \
- /usr/include/libintl.h /usr/include/c++/15.2.1/bits/codecvt.h \
- /usr/include/c++/15.2.1/bits/locale_facets_nonio.tcc \
- /usr/include/c++/15.2.1/bits/locale_conv.h \
- /usr/include/c++/15.2.1/optional /usr/include/c++/15.2.1/span \
- /usr/include/c++/15.2.1/bits/monostate.h \
- /usr/include/c++/15.2.1/bits/formatfwd.h \
- /usr/include/c++/15.2.1/bits/unicode.h \
- /usr/include/c++/15.2.1/bits/stl_algo.h \
- /usr/include/c++/15.2.1/bits/algorithmfwd.h \
- /usr/include/c++/15.2.1/bits/stl_heap.h \
- /usr/include/c++/15.2.1/bits/uniform_int_dist.h \
- /usr/include/c++/15.2.1/bits/stl_tempbuf.h \
- /usr/include/c++/15.2.1/bits/unicode-data.h \
- /usr/include/c++/15.2.1/chrono /usr/include/c++/15.2.1/sstream \
- /usr/include/c++/15.2.1/istream /usr/include/c++/15.2.1/ostream \
- /usr/include/c++/15.2.1/bits/ostream.tcc \
- /usr/include/c++/15.2.1/bits/istream.tcc \
- /usr/include/c++/15.2.1/bits/sstream.tcc /usr/include/c++/15.2.1/vector \
- /usr/include/c++/15.2.1/bits/stl_uninitialized.h \
- /usr/include/c++/15.2.1/bits/stl_vector.h \
- /usr/include/c++/15.2.1/bits/stl_bvector.h \
- /usr/include/c++/15.2.1/bits/vector.tcc \
- /usr/include/c++/15.2.1/bits/shared_ptr.h \
- /usr/include/c++/15.2.1/bits/shared_ptr_base.h \
- /usr/include/c++/15.2.1/bits/allocated_ptr.h \
- /usr/include/c++/15.2.1/ext/concurrence.h \
- /usr/include/c++/15.2.1/bits/align.h \
- /usr/include/c++/15.2.1/bits/chrono_io.h /usr/include/c++/15.2.1/iomanip \
- /usr/include/c++/15.2.1/bits/quoted_string.h \
- /usr/include/c++/15.2.1/mutex /usr/include/c++/15.2.1/bits/unique_lock.h \
+ /usr/include/c++/15.2.1/backward/auto_ptr.h \
+ /usr/include/c++/15.2.1/bits/ranges_uninitialized.h \
+ /usr/include/c++/15.2.1/bits/out_ptr.h \
+ /usr/include/c++/15.2.1/pstl/glue_memory_defs.h \
+ /usr/include/c++/15.2.1/pstl/execution_defs.h \
  /usr/include/wayland-server.h /usr/include/wayland-server-core.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdbool.h \
  /usr/include/wayland-util.h /usr/include/c++/15.2.1/math.h \
@@ -253,10 +226,43 @@ CMakeFiles/superglue.dir/src/main.cpp.o: \
  /usr/include/c++/15.2.1/tr1/riemann_zeta.tcc /usr/include/inttypes.h \
  /usr/include/wayland-version.h /usr/include/wayland-server-protocol.h \
  /usr/include/wayland-server.h \
- /usr/include/hyprland/src/plugins/PluginAPI.hpp \
- /usr/include/hyprland/src/helpers/Color.hpp \
- /usr/include/hyprgraphics/color/Color.hpp \
- /usr/include/hyprland/src/macros.hpp /usr/include/c++/15.2.1/csignal \
+ /home/snawy/.config/hypr/plugins/superglue/src/types.hpp \
+ /usr/include/c++/15.2.1/chrono /usr/include/c++/15.2.1/sstream \
+ /usr/include/c++/15.2.1/istream /usr/include/c++/15.2.1/ostream \
+ /usr/include/c++/15.2.1/format /usr/include/c++/15.2.1/array \
+ /usr/include/c++/15.2.1/charconv /usr/include/c++/15.2.1/locale \
+ /usr/include/c++/15.2.1/bits/locale_facets_nonio.h \
+ /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/time_members.h \
+ /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/15.2.1/bits/codecvt.h \
+ /usr/include/c++/15.2.1/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/15.2.1/bits/locale_conv.h \
+ /usr/include/c++/15.2.1/optional /usr/include/c++/15.2.1/span \
+ /usr/include/c++/15.2.1/bits/monostate.h \
+ /usr/include/c++/15.2.1/bits/formatfwd.h \
+ /usr/include/c++/15.2.1/bits/unicode.h \
+ /usr/include/c++/15.2.1/bits/stl_algo.h \
+ /usr/include/c++/15.2.1/bits/algorithmfwd.h \
+ /usr/include/c++/15.2.1/bits/stl_heap.h \
+ /usr/include/c++/15.2.1/bits/uniform_int_dist.h \
+ /usr/include/c++/15.2.1/bits/unicode-data.h \
+ /usr/include/c++/15.2.1/bits/ostream.tcc \
+ /usr/include/c++/15.2.1/bits/istream.tcc \
+ /usr/include/c++/15.2.1/bits/sstream.tcc /usr/include/c++/15.2.1/vector \
+ /usr/include/c++/15.2.1/bits/stl_vector.h \
+ /usr/include/c++/15.2.1/bits/stl_bvector.h \
+ /usr/include/c++/15.2.1/bits/vector.tcc \
+ /usr/include/c++/15.2.1/bits/chrono_io.h /usr/include/c++/15.2.1/iomanip \
+ /usr/include/c++/15.2.1/bits/quoted_string.h \
+ /home/snawy/.config/hypr/plugins/superglue/src/config.hpp \
+ /home/snawy/.config/hypr/plugins/superglue/src/decoration.hpp \
+ /usr/include/hyprland/src/render/decorations/IHyprWindowDecoration.hpp \
+ /usr/include/c++/15.2.1/any /usr/include/hyprland/src/defines.hpp \
+ /usr/include/hyprland/src/includes.hpp /usr/include/getopt.h \
+ /usr/include/bits/getopt_ext.h /usr/include/libinput.h \
+ /usr/include/libudev.h /usr/include/sys/sysmacros.h \
+ /usr/include/bits/sysmacros.h /usr/include/c++/15.2.1/stdlib.h \
+ /usr/include/linux/input-event-codes.h /usr/include/c++/15.2.1/csignal \
  /usr/include/signal.h /usr/include/bits/signum-generic.h \
  /usr/include/bits/signum-arch.h /usr/include/bits/types/sig_atomic_t.h \
  /usr/include/bits/types/siginfo_t.h /usr/include/bits/types/__sigval_t.h \
@@ -268,66 +274,46 @@ CMakeFiles/superglue.dir/src/main.cpp.o: \
  /usr/include/sys/ucontext.h /usr/include/bits/sigstack.h \
  /usr/include/bits/sigstksz.h /usr/include/bits/ss_flags.h \
  /usr/include/bits/types/struct_sigstack.h /usr/include/bits/sigthread.h \
- /usr/include/bits/signal_ext.h /usr/include/c++/15.2.1/print \
- /usr/include/c++/15.2.1/utility \
- /usr/include/c++/15.2.1/bits/stl_relops.h \
- /usr/include/hyprland/src/helpers/memory/Memory.hpp \
- /usr/include/hyprutils/memory/WeakPtr.hpp \
- /usr/include/hyprutils/memory/SharedPtr.hpp \
- /usr/include/hyprutils/memory/ImplBase.hpp \
- /usr/include/c++/15.2.1/memory \
- /usr/include/c++/15.2.1/bits/stl_raw_storage_iter.h \
- /usr/include/c++/15.2.1/bits/shared_ptr_atomic.h \
- /usr/include/c++/15.2.1/backward/auto_ptr.h \
- /usr/include/c++/15.2.1/bits/ranges_uninitialized.h \
- /usr/include/c++/15.2.1/bits/out_ptr.h \
- /usr/include/c++/15.2.1/pstl/glue_memory_defs.h \
- /usr/include/c++/15.2.1/pstl/execution_defs.h \
- /usr/include/hyprutils/memory/Casts.hpp \
- /usr/include/hyprutils/memory/UniquePtr.hpp \
- /usr/include/hyprutils/memory/Atomic.hpp \
- /usr/include/hyprland/src/debug/Log.hpp /usr/include/c++/15.2.1/iostream \
- /usr/include/c++/15.2.1/fstream \
- /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/basic_file.h \
- /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++io.h \
- /usr/include/c++/15.2.1/bits/fstream.tcc \
- /usr/include/hyprland/src/plugins/HookSystem.hpp \
+ /usr/include/bits/signal_ext.h /usr/include/sys/wait.h \
+ /usr/include/bits/types/idtype_t.h /usr/include/wayland-server-core.h \
+ /usr/include/GLES3/gl32.h /usr/include/GLES3/gl3platform.h \
+ /usr/include/KHR/khrplatform.h /usr/include/GLES3/gl3ext.h \
  /usr/include/hyprland/src/SharedDefs.hpp \
  /usr/include/hyprland/src/helpers/math/Math.hpp \
  /usr/include/wayland-server-protocol.h \
  /usr/include/hyprutils/math/Region.hpp /usr/include/pixman-1/pixman.h \
  /usr/include/pixman-1/pixman-version.h \
  /usr/include/hyprutils/math/Vector2D.hpp \
+ /usr/include/hyprutils/memory/Casts.hpp /usr/include/c++/15.2.1/utility \
+ /usr/include/c++/15.2.1/bits/stl_relops.h \
  /usr/include/hyprutils/math/Misc.hpp /usr/include/hyprutils/math/Box.hpp \
  /usr/include/hyprutils/math/Mat3x3.hpp \
  /usr/include/c++/15.2.1/functional \
  /usr/include/c++/15.2.1/bits/std_function.h \
  /usr/include/c++/15.2.1/bits/move_only_function.h \
- /usr/include/c++/15.2.1/bits/mofunc_impl.h /usr/include/c++/15.2.1/any \
+ /usr/include/c++/15.2.1/bits/mofunc_impl.h \
  /usr/include/c++/15.2.1/algorithm \
  /usr/include/c++/15.2.1/bits/ranges_algo.h \
  /usr/include/c++/15.2.1/pstl/glue_algorithm_defs.h \
- /usr/include/hyprland/src/defines.hpp \
- /usr/include/hyprland/src/includes.hpp /usr/include/getopt.h \
- /usr/include/bits/getopt_ext.h /usr/include/libinput.h \
- /usr/include/libudev.h /usr/include/sys/sysmacros.h \
- /usr/include/bits/sysmacros.h /usr/include/c++/15.2.1/stdlib.h \
- /usr/include/linux/input-event-codes.h /usr/include/sys/wait.h \
- /usr/include/bits/types/idtype_t.h /usr/include/wayland-server-core.h \
- /usr/include/GLES3/gl32.h /usr/include/GLES3/gl3platform.h \
- /usr/include/KHR/khrplatform.h /usr/include/GLES3/gl3ext.h \
+ /usr/include/hyprland/src/debug/Log.hpp /usr/include/c++/15.2.1/iostream \
+ /usr/include/c++/15.2.1/fstream \
+ /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/basic_file.h \
+ /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++io.h \
+ /usr/include/c++/15.2.1/bits/fstream.tcc \
+ /usr/include/hyprland/src/helpers/Color.hpp \
+ /usr/include/hyprgraphics/color/Color.hpp \
+ /usr/include/hyprland/src/macros.hpp /usr/include/c++/15.2.1/print \
+ /usr/include/hyprland/src/helpers/memory/Memory.hpp \
+ /usr/include/hyprutils/memory/WeakPtr.hpp \
+ /usr/include/hyprutils/memory/SharedPtr.hpp \
+ /usr/include/hyprutils/memory/ImplBase.hpp \
+ /usr/include/hyprutils/memory/UniquePtr.hpp \
+ /usr/include/hyprutils/memory/Atomic.hpp \
  /usr/include/hyprland/src/desktop/DesktopTypes.hpp \
- /usr/include/hyprland/src/version.h /usr/include/hyprlang.hpp \
- /usr/include/c++/15.2.1/typeindex \
- /usr/include/hyprland/src/config/ConfigManager.hpp \
- /usr/include/hyprutils/animation/AnimationConfig.hpp \
+ /usr/include/hyprland/src/render/decorations/DecorationPositioner.hpp \
  /usr/include/c++/15.2.1/map /usr/include/c++/15.2.1/bits/stl_tree.h \
  /usr/include/c++/15.2.1/bits/stl_map.h \
  /usr/include/c++/15.2.1/bits/stl_multimap.h \
- /usr/include/c++/15.2.1/variant /usr/include/xf86drmMode.h \
- /usr/include/libdrm/drm.h /usr/include/asm/ioctl.h \
- /usr/include/asm-generic/ioctl.h /usr/include/libdrm/drm_mode.h \
- /usr/include/libdrm/drm.h /usr/include/libdrm/drm_mode.h \
  /usr/include/hyprland/src/helpers/Monitor.hpp \
  /usr/include/c++/15.2.1/stack /usr/include/c++/15.2.1/deque \
  /usr/include/c++/15.2.1/bits/stl_deque.h \
@@ -335,6 +321,7 @@ CMakeFiles/superglue.dir/src/main.cpp.o: \
  /usr/include/c++/15.2.1/bits/stl_stack.h /usr/include/c++/15.2.1/ranges \
  /usr/include/c++/15.2.1/iterator \
  /usr/include/c++/15.2.1/bits/stream_iterator.h \
+ /usr/include/c++/15.2.1/variant \
  /usr/include/c++/15.2.1/bits/elements_of.h \
  /usr/include/hyprland/src/helpers/MiscFunctions.hpp \
  /usr/include/c++/15.2.1/expected \
@@ -351,9 +338,13 @@ CMakeFiles/superglue.dir/src/main.cpp.o: \
  /usr/include/hyprland/src/desktop/Popup.hpp \
  /usr/include/hyprland/src/helpers/AnimatedVariable.hpp \
  /usr/include/hyprutils/animation/AnimatedVariable.hpp \
+ /usr/include/hyprutils/animation/AnimationConfig.hpp \
  /usr/include/hyprutils/animation/AnimationManager.hpp \
  /usr/include/hyprutils/animation/BezierCurve.hpp \
- /usr/include/hyprland/src/helpers/CMType.hpp \
+ /usr/include/hyprland/src/helpers/CMType.hpp /usr/include/xf86drmMode.h \
+ /usr/include/libdrm/drm.h /usr/include/asm/ioctl.h \
+ /usr/include/asm-generic/ioctl.h /usr/include/libdrm/drm_mode.h \
+ /usr/include/libdrm/drm.h /usr/include/libdrm/drm_mode.h \
  /usr/include/hyprland/src/helpers/time/Timer.hpp \
  /usr/include/hyprland/src/helpers/time/Time.hpp \
  /usr/include/hyprland/src/protocols/types/ColorManagement.hpp \
@@ -365,7 +356,44 @@ CMakeFiles/superglue.dir/src/main.cpp.o: \
  /usr/include/aquamarine/allocator/Allocator.hpp \
  /usr/include/aquamarine/buffer/Buffer.hpp \
  /usr/include/aquamarine/misc/Attachment.hpp \
+ /usr/include/c++/15.2.1/typeindex \
  /usr/include/aquamarine/backend/Misc.hpp \
+ /usr/include/hyprland/src/render/OpenGL.hpp \
+ /usr/include/hyprland/src/helpers/Format.hpp \
+ /usr/include/hyprland/src/helpers/sync/SyncTimeline.hpp \
+ /usr/include/c++/15.2.1/list /usr/include/c++/15.2.1/bits/stl_list.h \
+ /usr/include/c++/15.2.1/bits/list.tcc /usr/include/cairo/cairo.h \
+ /usr/include/cairo/cairo-version.h /usr/include/cairo/cairo-features.h \
+ /usr/include/cairo/cairo-deprecated.h \
+ /usr/include/hyprland/src/render/Shader.hpp \
+ /usr/include/hyprland/src/render/Texture.hpp \
+ /usr/include/hyprland/src/render/Framebuffer.hpp \
+ /usr/include/hyprland/src/render/Renderbuffer.hpp \
+ /usr/include/hyprland/src/render/pass/Pass.hpp \
+ /usr/include/hyprland/src/render/pass/PassElement.hpp \
+ /usr/include/EGL/egl.h /usr/include/EGL/eglplatform.h \
+ /usr/include/EGL/eglext.h /usr/include/GLES2/gl2ext.h \
+ /usr/include/hyprgraphics/resource/resources/ImageResource.hpp \
+ /usr/include/hyprgraphics/resource/resources/AsyncResource.hpp \
+ /usr/include/hyprgraphics/cairo/CairoSurface.hpp \
+ /usr/include/c++/15.2.1/atomic \
+ /usr/include/hyprland/src/debug/TracyDefines.hpp \
+ /usr/include/hyprland/src/protocols/core/Compositor.hpp \
+ /usr/include/c++/15.2.1/queue /usr/include/c++/15.2.1/bits/stl_queue.h \
+ /usr/include/hyprland/src/protocols/WaylandProtocol.hpp \
+ /usr/include/hyprland/src/protocols/types/SurfaceStateQueue.hpp \
+ /usr/include/hyprland/src/protocols/types/SurfaceState.hpp \
+ /usr/include/hyprland/src/protocols/types/Buffer.hpp \
+ /usr/include/hyprland/src/protocols/types/WLBuffer.hpp \
+ /usr/include/hyprland/protocols/wayland.hpp \
+ /usr/include/hyprland/src/protocols/DRMSyncobj.hpp \
+ /usr/include/hyprland/src/helpers/sync/SyncReleaser.hpp \
+ /usr/include/hyprland/protocols/linux-drm-syncobj-v1.hpp \
+ /usr/include/hyprland/src/protocols/types/SurfaceRole.hpp \
+ /usr/include/hyprland/src/plugins/PluginAPI.hpp \
+ /usr/include/hyprland/src/plugins/HookSystem.hpp \
+ /usr/include/hyprland/src/version.h /usr/include/hyprlang.hpp \
+ /usr/include/hyprland/src/config/ConfigManager.hpp \
  /usr/include/hyprland/src/desktop/Window.hpp \
  /usr/include/hyprland/src/config/ConfigDataValues.hpp \
  /usr/include/hyprland/src/helpers/varlist/VarList.hpp \
@@ -374,14 +402,8 @@ CMakeFiles/superglue.dir/src/main.cpp.o: \
  /usr/include/c++/15.2.1/set /usr/include/c++/15.2.1/bits/stl_set.h \
  /usr/include/c++/15.2.1/bits/stl_multiset.h \
  /usr/include/hyprland/src/managers/XWaylandManager.hpp \
- /usr/include/hyprland/src/render/decorations/IHyprWindowDecoration.hpp \
- /usr/include/hyprland/src/render/decorations/DecorationPositioner.hpp \
  /usr/include/hyprland/src/render/Transformer.hpp \
- /usr/include/hyprland/src/render/Framebuffer.hpp \
- /usr/include/hyprland/src/helpers/Format.hpp \
- /usr/include/hyprland/src/render/Texture.hpp \
  /usr/include/hyprland/src/render/pass/SurfacePassElement.hpp \
- /usr/include/hyprland/src/render/pass/PassElement.hpp \
  /usr/include/hyprland/src/desktop/Workspace.hpp \
  /usr/include/hyprland/src/desktop/WindowRule.hpp \
  /usr/include/hyprland/src/desktop/Rule.hpp \
@@ -399,35 +421,7 @@ CMakeFiles/superglue.dir/src/main.cpp.o: \
  /usr/include/hyprland/src/devices/IHID.hpp \
  /usr/include/hyprland/src/managers/eventLoop/EventLoopTimer.hpp \
  /usr/include/hyprland/src/render/Renderer.hpp \
- /usr/include/c++/15.2.1/list /usr/include/c++/15.2.1/bits/stl_list.h \
- /usr/include/c++/15.2.1/bits/list.tcc \
  /usr/include/hyprland/src/desktop/LayerSurface.hpp \
- /usr/include/hyprland/src/render/OpenGL.hpp \
- /usr/include/hyprland/src/helpers/sync/SyncTimeline.hpp \
- /usr/include/cairo/cairo.h /usr/include/cairo/cairo-version.h \
- /usr/include/cairo/cairo-features.h \
- /usr/include/cairo/cairo-deprecated.h \
- /usr/include/hyprland/src/render/Shader.hpp \
- /usr/include/hyprland/src/render/Renderbuffer.hpp \
- /usr/include/hyprland/src/render/pass/Pass.hpp /usr/include/EGL/egl.h \
- /usr/include/EGL/eglplatform.h /usr/include/EGL/eglext.h \
- /usr/include/GLES2/gl2ext.h \
- /usr/include/hyprgraphics/resource/resources/ImageResource.hpp \
- /usr/include/hyprgraphics/resource/resources/AsyncResource.hpp \
- /usr/include/hyprgraphics/cairo/CairoSurface.hpp \
- /usr/include/hyprland/src/debug/TracyDefines.hpp \
- /usr/include/hyprland/src/protocols/core/Compositor.hpp \
- /usr/include/c++/15.2.1/queue /usr/include/c++/15.2.1/bits/stl_queue.h \
- /usr/include/hyprland/src/protocols/WaylandProtocol.hpp \
- /usr/include/hyprland/src/protocols/types/SurfaceStateQueue.hpp \
- /usr/include/hyprland/src/protocols/types/SurfaceState.hpp \
- /usr/include/hyprland/src/protocols/types/Buffer.hpp \
- /usr/include/hyprland/src/protocols/types/WLBuffer.hpp \
- /usr/include/hyprland/protocols/wayland.hpp \
- /usr/include/hyprland/src/protocols/DRMSyncobj.hpp \
- /usr/include/hyprland/src/helpers/sync/SyncReleaser.hpp \
- /usr/include/hyprland/protocols/linux-drm-syncobj-v1.hpp \
- /usr/include/hyprland/src/protocols/types/SurfaceRole.hpp \
  /usr/include/hyprland/protocols/cursor-shape-v1.hpp \
  /usr/include/hyprland/src/Compositor.hpp /usr/include/sys/resource.h \
  /usr/include/bits/resource.h /usr/include/bits/types/struct_rusage.h \
@@ -435,6 +429,12 @@ CMakeFiles/superglue.dir/src/main.cpp.o: \
  /usr/include/aquamarine/backend/Backend.hpp \
  /usr/include/hyprutils/cli/Logger.hpp \
  /usr/include/c++/15.2.1/condition_variable \
+ /usr/include/c++/15.2.1/stop_token \
+ /usr/include/c++/15.2.1/bits/std_thread.h \
+ /usr/include/c++/15.2.1/semaphore \
+ /usr/include/c++/15.2.1/bits/semaphore_base.h \
+ /usr/include/c++/15.2.1/bits/atomic_timed_wait.h \
+ /usr/include/c++/15.2.1/bits/this_thread_sleep.h /usr/include/sys/time.h \
+ /usr/include/semaphore.h /usr/include/bits/semaphore.h \
  /usr/include/aquamarine/backend/Session.hpp \
- /usr/include/aquamarine/input/Input.hpp \
- /home/snawy/.config/hypr/plugins/superglue/src/Superglue.hpp
+ /usr/include/aquamarine/input/Input.hpp
