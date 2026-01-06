@@ -30,6 +30,7 @@ class Superglue : public IHyprWindowDecoration {
   void renderPass(PHLMONITOR pMonitor, float a);
   CBox assignedBoxGlobal();
   std::string getWindowAddress() { return m_windowAddress; }
+  CBox getVisualBox();
 
  private:
   Vector2D calculateIconPosition(

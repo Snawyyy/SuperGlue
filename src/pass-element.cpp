@@ -20,5 +20,5 @@ bool GluePassElement::needsPrecomputeBlur() {
 }
 
 std::optional<CBox> GluePassElement::boundingBox() {
-  return m_data.deco->assignedBoxGlobal();
+  return m_data.deco->getVisualBox();
 }

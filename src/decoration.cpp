@@ -55,13 +55,48 @@ void Superglue::updateWindow(PHLWINDOW pWindow) {
 }
 
 void Superglue::damageEntire() {
-  auto pWindow = m_pWindowRef.lock();
-  if (!pWindow) return;
-
-  Vector2D pos = pWindow->m_realPosition->value();
-  Vector2D size = pWindow->m_realSize->value();
-  CBox box = {pos.x, pos.y, size.x, size.y};
+  CBox box = getVisualBox();
   g_pHyprRenderer->damageBox(box);
+}
+
+CBox Superglue::getVisualBox() {
+  CBox box = assignedBoxGlobal();
+  
+  // Extend for scroll anchor tether
+  if (OverlayState::get()) {
+    auto states = OverlayState::get()->getOverlayInfo(m_windowAddress);
+    for (const auto& info : states) {
+      if (info.type == OverlayType::SCROLL_ANCHOR) {
+         // Current bounds
+         double minX = box.x;
+         double minY = box.y;
+         double maxX = box.x + box.w;
+         double maxY = box.y + box.h;
+
+         // Check Anchor
+         minX = std::min(minX, (double)info.x);
+         minY = std::min(minY, (double)info.y);
+         maxX = std::max(maxX, (double)info.x);
+         maxY = std::max(maxY, (double)info.y);
+
+         // Check Mouse
+         Vector2D mousePos = g_pInputManager->getMouseCoordsInternal();
+         minX = std::min(minX, (double)mousePos.x);
+         minY = std::min(minY, (double)mousePos.y);
+         maxX = std::max(maxX, (double)mousePos.x);
+         maxY = std::max(maxY, (double)mousePos.y);
+
+         // Padding (50px)
+         minX -= 50.0;
+         minY -= 50.0;
+         maxX += 50.0;
+         maxY += 50.0;
+
+         box = {minX, minY, maxX - minX, maxY - minY};
+      }
+    }
+  }
+  return box;
 }
 
 CBox Superglue::assignedBoxGlobal() {
