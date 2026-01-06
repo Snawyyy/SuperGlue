@@ -164,11 +164,16 @@ void OverlayState::onOverlayCommand(const std::string& content) {
   if (damageNeeded) dispatchDamage();
 }
 
-void OverlayState::handleScrollCommand(std::istringstream& lineStream, bool& damageNeeded) {
+void OverlayState::handleScrollCommand(
+    std::istringstream& lineStream,
+    bool& damageNeeded) {
   std::string addr;
   double x, y;
   if (lineStream >> addr >> x >> y) {
-    log("Scroll Start: " + addr + " at " + std::to_string(x) + "," + std::to_string(y));
+    auto logMsg = "Scroll Start: " + addr + " at " +
+                  std::to_string(x) + "," + std::to_string(y);
+    log(logMsg);
+
     std::lock_guard<std::recursive_mutex> lock(m_mutex);
     OverlayEvent event;
     event.type = OverlayType::SCROLL_ANCHOR;
@@ -179,45 +184,49 @@ void OverlayState::handleScrollCommand(std::istringstream& lineStream, bool& dam
   }
 }
 
-void OverlayState::handleVolumeCommand(std::istringstream& lineStream, const std::string& cmd, bool& damageNeeded) {
-    std::string addr;
-    int volume = 0;
-    if (lineStream >> addr >> volume) {
-        if (addr.empty()) return;
+void OverlayState::handleVolumeCommand(
+    std::istringstream& lineStream,
+    const std::string& cmd,
+    bool& damageNeeded) {
+  std::string addr;
+  int volume = 0;
+  if (lineStream >> addr >> volume) {
+    if (addr.empty()) return;
 
-        log("Received cmd: " + cmd + " for " + addr +
-            " vol: " + std::to_string(volume));
+    auto logMsg = "Received cmd: " + cmd + " for " + addr +
+                  " vol: " + std::to_string(volume);
+    log(logMsg);
 
-        std::lock_guard<std::recursive_mutex> lock(m_mutex);
+    std::lock_guard<std::recursive_mutex> lock(m_mutex);
 
-        // Clear previous events for this address to avoid stacking
-        m_volumeEvents[addr].clear();
+    // Clear previous events for this address to avoid stacking
+    m_volumeEvents[addr].clear();
 
-        auto now = std::chrono::steady_clock::now();
+    auto now = std::chrono::steady_clock::now();
 
-        // Create volume level event (shows in center)
-        OverlayEvent levelEvent;
-        levelEvent.type = OverlayType::VOLUME_LEVEL;
-        levelEvent.startTime = now;
-        levelEvent.volumeLevel = volume;
-        m_volumeEvents[addr].push_back(levelEvent);
+    // Create volume level event (shows in center)
+    OverlayEvent levelEvent;
+    levelEvent.type = OverlayType::VOLUME_LEVEL;
+    levelEvent.startTime = now;
+    levelEvent.volumeLevel = volume;
+    m_volumeEvents[addr].push_back(levelEvent);
 
-        // Create direction arrow event
-        OverlayEvent arrowEvent;
-        arrowEvent.startTime = now;
-        arrowEvent.volumeLevel = volume;
-        if (cmd == "vol-up") {
-          arrowEvent.type = OverlayType::VOLUME_UP;
-        } else if (cmd == "vol-down") {
-          arrowEvent.type = OverlayType::VOLUME_DOWN;
-        }
-        
-        if (arrowEvent.type != OverlayType::NONE) {
-             m_volumeEvents[addr].push_back(arrowEvent);
-        }
-
-        damageNeeded = true;
+    // Create direction arrow event
+    OverlayEvent arrowEvent;
+    arrowEvent.startTime = now;
+    arrowEvent.volumeLevel = volume;
+    if (cmd == "vol-up") {
+      arrowEvent.type = OverlayType::VOLUME_UP;
+    } else if (cmd == "vol-down") {
+      arrowEvent.type = OverlayType::VOLUME_DOWN;
     }
+
+    if (arrowEvent.type != OverlayType::NONE) {
+      m_volumeEvents[addr].push_back(arrowEvent);
+    }
+
+    damageNeeded = true;
+  }
 }
 
 
@@ -252,21 +261,26 @@ std::vector<OverlayInfo> OverlayState::getOverlayInfo(
   return result;
 }
 
-void OverlayState::appendScrollInfo(const std::string& address, std::vector<OverlayInfo>& result) {
-    if (m_scrollAnchors.contains(address)) {
-      auto& anchor = m_scrollAnchors[address];
-      OverlayInfo info;
-      info.type = OverlayType::SCROLL_ANCHOR;
-      info.opacity = 1.0f;
-      info.iconPath = config::getDefaultIconPath(OverlayType::SCROLL_ANCHOR);
-      info.hasCustomPos = true;
-      info.x = anchor.x;
-      info.y = anchor.y;
-      result.push_back(info);
+void OverlayState::appendScrollInfo(
+    const std::string& address,
+    std::vector<OverlayInfo>& result) {
+  if (m_scrollAnchors.contains(address)) {
+    auto& anchor = m_scrollAnchors[address];
+    OverlayInfo info;
+    info.type = OverlayType::SCROLL_ANCHOR;
+    info.opacity = 1.0f;
+    info.iconPath = config::getDefaultIconPath(
+        OverlayType::SCROLL_ANCHOR);
+    info.hasCustomPos = true;
+    info.x = anchor.x;
+    info.y = anchor.y;
+    result.push_back(info);
   }
 }
 
-void OverlayState::appendVolumeInfo(const std::string& address, std::vector<OverlayInfo>& result) {
+void OverlayState::appendVolumeInfo(
+    const std::string& address,
+    std::vector<OverlayInfo>& result) {
   if (m_volumeEvents.contains(address)) {
     auto& events = m_volumeEvents[address];
     for (auto it = events.begin(); it != events.end();) {
@@ -281,7 +295,8 @@ void OverlayState::appendVolumeInfo(const std::string& address, std::vector<Over
 
         // Use volume level icon for VOLUME_LEVEL type
         if (it->type == OverlayType::VOLUME_LEVEL) {
-          info.iconPath = config::getVolumeLevelIconPath(it->volumeLevel);
+          info.iconPath = config::getVolumeLevelIconPath(
+              it->volumeLevel);
         } else {
           info.iconPath = config::getDefaultIconPath(it->type);
         }
@@ -293,7 +308,9 @@ void OverlayState::appendVolumeInfo(const std::string& address, std::vector<Over
   }
 }
 
-void OverlayState::appendMuteInfo(const std::string& address, std::vector<OverlayInfo>& result) {
+void OverlayState::appendMuteInfo(
+    const std::string& address,
+    std::vector<OverlayInfo>& result) {
   if (m_mutedAddresses.contains(address)) {
     OverlayInfo info;
     info.type = OverlayType::MUTE;
@@ -302,4 +319,3 @@ void OverlayState::appendMuteInfo(const std::string& address, std::vector<Overla
     result.push_back(info);
   }
 }
-

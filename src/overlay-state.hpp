@@ -64,18 +64,30 @@ class OverlayState {
   void onOverlayCommand(const std::string& content);
   
   // Helper methods for command parsing
-  void handleScrollCommand(std::istringstream& lineStream, bool& damageNeeded);
-  void handleVolumeCommand(std::istringstream& lineStream, const std::string& cmd, bool& damageNeeded);
+  void handleScrollCommand(
+      std::istringstream& lineStream,
+      bool& damageNeeded);
+  void handleVolumeCommand(
+      std::istringstream& lineStream,
+      const std::string& cmd,
+      bool& damageNeeded);
 
   // Helper methods for overlay info
-  void appendScrollInfo(const std::string& address, std::vector<OverlayInfo>& result);
-  void appendVolumeInfo(const std::string& address, std::vector<OverlayInfo>& result);
-  void appendMuteInfo(const std::string& address, std::vector<OverlayInfo>& result);
+  void appendScrollInfo(
+      const std::string& address,
+      std::vector<OverlayInfo>& result);
+  void appendVolumeInfo(
+      const std::string& address,
+      std::vector<OverlayInfo>& result);
+  void appendMuteInfo(
+      const std::string& address,
+      std::vector<OverlayInfo>& result);
 
   void dispatchDamage();
   float calculateOpacity(const OverlayEvent& event);
 
-  std::unordered_map<std::string, std::vector<OverlayEvent>> m_volumeEvents;
+  std::unordered_map<std::string, std::vector<OverlayEvent>>
+      m_volumeEvents;
   std::unordered_map<std::string, OverlayEvent> m_scrollAnchors;
   std::unordered_set<std::string> m_mutedAddresses;
   std::unordered_set<Superglue*> m_windows;

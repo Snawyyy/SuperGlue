@@ -117,6 +117,22 @@ void Superglue::draw(PHLMONITOR pMonitor, float const& a) {
     return;
   }
 
+  // Only draw on monitors where the window is actually visible
+  // Check if window intersects with this monitor's area
+  CBox windowBox = assignedBoxGlobal();
+  Vector2D windowCenter = {
+    windowBox.x + windowBox.w / 2,
+    windowBox.y + windowBox.h / 2
+  };
+
+  // Simple check: is window center within monitor bounds?
+  if (windowCenter.x < pMonitor->m_position.x ||
+      windowCenter.x > pMonitor->m_position.x + pMonitor->m_size.x ||
+      windowCenter.y < pMonitor->m_position.y ||
+      windowCenter.y > pMonitor->m_position.y + pMonitor->m_size.y) {
+    return;
+  }
+
   if (!OverlayState::get()) return;
 
   auto states = OverlayState::get()->getOverlayInfo(m_windowAddress);
@@ -144,21 +160,24 @@ void Superglue::renderPass(PHLMONITOR pMonitor, float a) {
 
   // Render volume overlays first (bottom layer)
   for (const auto& info : states) {
-    if (info.type == OverlayType::MUTE || info.type == OverlayType::SCROLL_ANCHOR) continue;
-    renderOverlay(info, windowBox, a);
+    auto type = info.type;
+    if (type == OverlayType::MUTE || type == OverlayType::SCROLL_ANCHOR) {
+      continue;
+    }
+    renderOverlay(info, windowBox, a, pMonitor->m_position);
   }
 
   // Render mute overlay (top layer)
   for (const auto& info : states) {
     if (info.type == OverlayType::MUTE) {
-      renderOverlay(info, windowBox, a);
+      renderOverlay(info, windowBox, a, pMonitor->m_position);
     }
   }
 
   // Render Scroll Anchor + Line
   for (const auto& info : states) {
     if (info.type == OverlayType::SCROLL_ANCHOR) {
-      renderAnchorLine(info, windowBox, a);
+      renderAnchorLine(info, windowBox, a, pMonitor->m_position);
       hasAnchor = true;
     }
   }
@@ -169,7 +188,11 @@ void Superglue::renderPass(PHLMONITOR pMonitor, float a) {
   }
 }
 
-void Superglue::renderAnchorLine(const OverlayInfo& info, const CBox& windowBox, float alpha) {
+void Superglue::renderAnchorLine(
+    const OverlayInfo& info, 
+    const CBox& windowBox, 
+    float alpha,
+    const Vector2D& monitorPos) {
   // 1. Calculate geometry
   Vector2D anchorPos = {info.x, info.y}; // Anchor center
   Vector2D mousePos = g_pInputManager->getMouseCoordsInternal();
@@ -209,10 +232,13 @@ void Superglue::renderAnchorLine(const OverlayInfo& info, const CBox& windowBox,
   for (float d = step; d < len; d += step) {
     Vector2D dotPos = anchorPos + (dir * d);
     
+    // Translate to Monitor-Local coordinates
+    Vector2D localDotPos = dotPos - monitorPos;
+    
     // Center dot
     CBox dotBox = {
-        dotPos.x - dotSize/2.0,
-        dotPos.y - dotSize/2.0,
+        localDotPos.x - dotSize/2.0,
+        localDotPos.y - dotSize/2.0,
         (double)dotSize,
         (double)dotSize
     };
@@ -228,9 +254,10 @@ void Superglue::renderAnchorLine(const OverlayInfo& info, const CBox& windowBox,
   auto tex = cache.load(iconPath);
   if (tex) {
       Vector2D iconSize = cache.getSize(iconPath);
+      // Translate to Monitor-Local
       CBox iconBox = {
-          anchorPos.x - (iconSize.x / 2.0f),
-          anchorPos.y - (iconSize.y / 2.0f),
+          anchorPos.x - monitorPos.x - (iconSize.x / 2.0f),
+          anchorPos.y - monitorPos.y - (iconSize.y / 2.0f),
           iconSize.x,
           iconSize.y
       };
@@ -243,7 +270,8 @@ void Superglue::renderAnchorLine(const OverlayInfo& info, const CBox& windowBox,
 void Superglue::renderOverlay(
     const OverlayInfo& info,
     const CBox& windowBox,
-    float alpha) {
+    float alpha,
+    const Vector2D& monitorPos) {
   if (info.iconPath.empty()) return;
 
   auto& cache = TextureCache::get();
@@ -266,8 +294,8 @@ void Superglue::renderOverlay(
   }
 
   CBox iconBox = {
-      pos.x,
-      pos.y,
+      pos.x - monitorPos.x,
+      pos.y - monitorPos.y,
       iconSize.x,
       iconSize.y
   };
