@@ -66,7 +66,7 @@ int OverlayState::onEvent(int fd, uint32_t mask) {
     char buf[8];
     read(fd, buf, sizeof(buf));
 
-    std::lock_guard<std::mutex> lock(m_mutex);
+    std::lock_guard<std::recursive_mutex> lock(m_mutex);
     for (auto* win : m_windows) {
       if (win) win->damageEntire();
     }
@@ -86,20 +86,20 @@ void OverlayState::shutdown() {
 }
 
 void OverlayState::log(const std::string& msg) {
-  static std::mutex logMutex;
-  std::lock_guard<std::mutex> lock(logMutex);
+  static std::recursive_mutex logMutex;
+  std::lock_guard<std::recursive_mutex> lock(logMutex);
   std::ofstream f(config::LOG_FILE, std::ios::app);
   f << msg << std::endl;
 }
 
 void OverlayState::registerWindow(Superglue* win) {
   log("Registering window: " + win->getWindowAddress());
-  std::lock_guard<std::mutex> lock(m_mutex);
+  std::lock_guard<std::recursive_mutex> lock(m_mutex);
   m_windows.insert(win);
 }
 
 void OverlayState::unregisterWindow(Superglue* win) {
-  std::lock_guard<std::mutex> lock(m_mutex);
+  std::lock_guard<std::recursive_mutex> lock(m_mutex);
   m_windows.erase(win);
 }
 
@@ -113,7 +113,7 @@ void OverlayState::onMuteStateChanged(const std::string& content) {
   }
 
   {
-    std::lock_guard<std::mutex> lock(m_mutex);
+    std::lock_guard<std::recursive_mutex> lock(m_mutex);
     m_mutedAddresses = newAddresses;
   }
   dispatchDamage();
@@ -146,7 +146,7 @@ void OverlayState::onOverlayCommand(const std::string& content) {
           std::string addr;
           if (lineStream >> addr) {
              log("Scroll Stop: " + addr);
-             std::lock_guard<std::mutex> lock(m_mutex);
+             std::lock_guard<std::recursive_mutex> lock(m_mutex);
              m_scrollAnchors.erase(addr);
              damageNeeded = true;
           }
@@ -169,7 +169,7 @@ void OverlayState::handleScrollCommand(std::istringstream& lineStream, bool& dam
   double x, y;
   if (lineStream >> addr >> x >> y) {
     log("Scroll Start: " + addr + " at " + std::to_string(x) + "," + std::to_string(y));
-    std::lock_guard<std::mutex> lock(m_mutex);
+    std::lock_guard<std::recursive_mutex> lock(m_mutex);
     OverlayEvent event;
     event.type = OverlayType::SCROLL_ANCHOR;
     event.x = x;
@@ -188,7 +188,7 @@ void OverlayState::handleVolumeCommand(std::istringstream& lineStream, const std
         log("Received cmd: " + cmd + " for " + addr +
             " vol: " + std::to_string(volume));
 
-        std::lock_guard<std::mutex> lock(m_mutex);
+        std::lock_guard<std::recursive_mutex> lock(m_mutex);
 
         // Clear previous events for this address to avoid stacking
         m_volumeEvents[addr].clear();
@@ -242,7 +242,7 @@ float OverlayState::calculateOpacity(const OverlayEvent& event) {
 
 std::vector<OverlayInfo> OverlayState::getOverlayInfo(
     const std::string& address) {
-  std::lock_guard<std::mutex> lock(m_mutex);
+  std::lock_guard<std::recursive_mutex> lock(m_mutex);
   std::vector<OverlayInfo> result;
 
   appendScrollInfo(address, result);

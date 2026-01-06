@@ -81,7 +81,7 @@ class OverlayState {
   std::unordered_set<Superglue*> m_windows;
 
   std::unique_ptr<FileWatcher> m_watcher;
-  std::mutex m_mutex;
+  std::recursive_mutex m_mutex;
 
   int m_eventFd[2];
   wl_event_source* m_eventSource = nullptr;
